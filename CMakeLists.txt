@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.14)
-project(Distance)
+project(cvdemo)
 
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
-add_executable(Distance ${PROJECT_SOURCE_DIR}/main.cpp)
+add_executable(cvdemo ${PROJECT_SOURCE_DIR}/main.cpp)
 
 include(ExternalProject)
 ExternalProject_Add(
@@ -45,6 +45,6 @@ set(OPENCV_LIBS ${CMAKE_SOURCE_DIR}/thirdparty/opencv/lib/${CMAKE_STATIC_LIBRARY
 )
 set(OPENCV_INCLUDE ${CMAKE_SOURCE_DIR}/thirdparty/opencv/include/opencv4)
 
-add_dependencies(Distance opencv)
-include_directories(Distance ${OPENCV_INCLUDE})
-target_link_libraries(Distance ${OPENCV_LIBS})
+add_dependencies(cvdemo opencv)
+include_directories(cvdemo ${OPENCV_INCLUDE})
+target_link_libraries(cvdemo ${OPENCV_LIBS})
